@@ -1,0 +1,67 @@
+<!-- public/product.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Product</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <a href="/">← Back</a>
+  <div id="product-detail"></div>
+
+  <script>
+    // read id from query string
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    if (!id) {
+      document.getElementById('product-detail').innerText = 'Product not found';
+    } else {
+      fetch('/api/products')
+        .then(r => r.json())
+        .then(products => {
+          const p = products.find(x => x._id === id);
+          if (!p) { document.getElementById('product-detail').innerText = 'Not found'; return; }
+          const html = `
+            <h2>${p.name}</h2>
+            <img src="${p.image || ''}" alt="${p.name}" style="max-width:240px" />
+            <p>${p.description || ''}</p>
+            <p><strong>Price:</strong> ₹${p.price}</p>
+
+            <h3>Place Order</h3>
+            <label>Name:<br><input id="cust-name" /></label><br>
+            <label>Contact:<br><input id="cust-contact" /></label><br>
+            <label>Address:<br><textarea id="cust-address"></textarea></label><br>
+            <label>Quantity:<br><input id="qty" type="number" value="1" min="1" /></label><br>
+            <button id="place-btn">Place Order</button>
+            <div id="msg"></div>
+          `;
+          document.getElementById('product-detail').innerHTML = html;
+
+          document.getElementById('place-btn').onclick = async () => {
+            const name = document.getElementById('cust-name').value.trim();
+            const contact = document.getElementById('cust-contact').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+            const qty = Number(document.getElementById('qty').value || 1);
+            if (!name || !contact || !address) { alert('Fill all fields'); return; }
+
+            const items = [{ productId: p._id, name: p.name, price: p.price, qty }];
+            const res = await fetch('/api/order', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, contact, address, items })
+            });
+            const data = await res.json();
+            if (res.ok) {
+              alert('Order placed! We will contact you. Order ID: ' + data.orderId);
+              location.href = '/';
+            } else {
+              alert(data.message || 'Order failed');
+            }
+          };
+        });
+    }
+  </script>
+</body>
+</html>
+

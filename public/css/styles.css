@@ -1,0 +1,11 @@
+/* public/css/styles.css */
+body 
+{ font-family: Arial, sans-serif; 
+    padding: 20px;
+     max-width: 1000px;
+      margin: 0 auto; 
+}
+.grid { display:flex; flex-wrap:wrap; gap:20px; }
+.card { border:1px solid #ddd; padding:12px; width:220px; border-radius:8px; background:#fff; }
+img { max-width:100%; display:block; margin-bottom:8px; }
+.order-card { border:1px dashed #ccc; padding:10px; margin-bottom:12px; background:#fafafa; }

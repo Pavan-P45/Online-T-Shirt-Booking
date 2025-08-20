@@ -1,0 +1,40 @@
+<!-- public/admin-login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <h2>Admin Login</h2>
+  <form id="loginForm">
+    <input id="username" placeholder="Username" /><br>
+    <input id="password" type="password" placeholder="Password" /><br>
+    <button type="submit">Login</button>
+  </form>
+  <div id="msg"></div>
+
+  <script>
+    document.getElementById('loginForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ username, password })
+      });
+
+      if (res.ok) {
+        location.href = '/admin-dashboard.html';
+      } else {
+        document.getElementById('msg').innerText = 'Login failed';
+      }
+    };
+    
+  </script>
+</body>
+</html>
+

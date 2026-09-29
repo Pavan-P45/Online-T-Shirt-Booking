@@ -1,0 +1,21 @@
+Description
+
+The T-Shirt Shopping Web App is a full-stack e-commerce application where users can browse T-shirts, add items to a cart, and place orders online.
+The system also includes an admin panel to manage products and store data in a database.
+
+Features
+
+Browse available T-shirts
+Add products to cart
+Place orders with customer details
+Admin login to add and manage products
+Persistent product storage in database
+Email notification to admin when an order is placed
+
+Install dependencies
+
+npm install
+
+Run the server
+
+node server.js

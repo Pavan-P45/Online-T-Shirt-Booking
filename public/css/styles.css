@@ -1,0 +1,776 @@
+/* =========================================================
+   T-SHIRT STORE - PROFESSIONAL STYLES
+   File: public/css/styles.css
+   ========================================================= */
+
+/* ---------- Google-like modern font ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* ---------- Global ---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f6f6f6;
+  color: #171717;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  background: #111111;
+  color: white;
+  min-height: 72px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header nav a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+header nav a:hover {
+  background: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 55px 0 80px;
+}
+
+main > h2 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+  border-color: #d8d8d8;
+}
+
+
+/* Product image */
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  background: #eeeeee;
+  transition: transform 0.35s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+
+/* Product name */
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 18px 18px 5px;
+  color: #171717;
+}
+
+
+/* Product price */
+
+.card p:nth-of-type(1) {
+  font-size: 19px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 18px 8px;
+}
+
+
+/* Product description */
+
+.card p:nth-of-type(2) {
+  color: #777777;
+  font-size: 13px;
+  margin: 0 18px 18px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+
+/* View & Order button */
+
+.card a {
+  display: block;
+  text-align: center;
+  background: #111111;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 18px 18px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.card a:hover {
+  background: #333333;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PRODUCT DETAIL PAGE
+   ========================================================= */
+
+body > a {
+  display: inline-block;
+  margin: 25px 6%;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+body > a:hover {
+  color: #111111;
+}
+
+#product-detail {
+  width: 90%;
+  max-width: 1050px;
+  margin: 20px auto 70px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 45px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e8e8e8;
+}
+
+#product-detail h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+#product-detail img {
+  width: 100%;
+  max-width: 430px !important;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #eeeeee;
+  margin-bottom: 25px;
+}
+
+#product-detail p {
+  margin-bottom: 12px;
+  color: #555555;
+}
+
+#product-detail p strong {
+  color: #111111;
+}
+
+#product-detail h3 {
+  font-size: 23px;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 13px 14px;
+  margin-top: 7px;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #171717;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+#qty {
+  max-width: 120px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  border: none;
+  background: #111111;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: #333333;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+
+/* Product order button */
+
+#place-btn {
+  min-width: 170px;
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   ADMIN LOGIN
+   ========================================================= */
+
+body:has(#loginForm) {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: #f3f3f3;
+}
+
+body:has(#loginForm) h2 {
+  width: 100%;
+  max-width: 420px;
+  background: #111111;
+  color: #ffffff;
+  padding: 25px 35px;
+  margin: 0;
+  border-radius: 12px 12px 0 0;
+  font-size: 24px;
+}
+
+#loginForm {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e5e5;
+  border-top: none;
+}
+
+#loginForm input {
+  max-width: none;
+  margin-bottom: 15px;
+}
+
+#loginForm button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 13px;
+}
+
+#msg {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+   ========================================================= */
+
+body:has(#addForm) {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 30px 5%;
+}
+
+body:has(#addForm) > h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+#logoutBtn {
+  float: right;
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid #cccccc;
+}
+
+#logoutBtn:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+
+/* Admin sections */
+
+body:has(#addForm) section {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 25px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+body:has(#addForm) section h3 {
+  font-size: 21px;
+  margin-bottom: 22px;
+}
+
+
+/* Add product form */
+
+#addForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+#addForm input,
+#addForm textarea {
+  max-width: none;
+  margin: 0;
+}
+
+#addForm textarea {
+  grid-column: span 2;
+}
+
+#addForm button {
+  width: fit-content;
+}
+
+#addMsg {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ADMIN PRODUCT LIST
+   ========================================================= */
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 18px;
+  transition: all 0.2s ease;
+}
+
+.product-card:hover {
+  border-color: #cccccc;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.product-card h4 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.product-card p {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  max-width: none !important;
+  object-fit: cover;
+  border-radius: 7px;
+  margin: 10px 0 15px;
+}
+
+.product-card button {
+  background: #ffffff;
+  color: #b00020;
+  border: 1px solid #e0b0b8;
+  width: 100%;
+}
+
+.product-card button:hover {
+  background: #b00020;
+  color: #ffffff;
+  border-color: #b00020;
+}
+
+
+/* =========================================================
+   ADMIN ORDERS
+   ========================================================= */
+
+#orders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.order-card {
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 22px;
+  margin: 0;
+  background: #fafafa;
+  transition: box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.order-card p {
+  margin-bottom: 8px;
+  color: #555555;
+  font-size: 14px;
+}
+
+.order-card p strong {
+  color: #111111;
+}
+
+.order-card ul {
+  margin: 10px 0 18px 20px;
+  color: #555555;
+  font-size: 14px;
+}
+
+.order-card hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 18px 0;
+}
+
+.order-card button {
+  background: #ffffff;
+  color: #b00020;
+  border: 1px solid #e0b0b8;
+}
+
+.order-card button:hover {
+  background: #b00020;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #orders {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  header {
+    padding: 0 20px;
+    min-height: 65px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header nav a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  main {
+    width: 92%;
+    padding: 35px 0 50px;
+  }
+
+  main > h2 {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .card {
+    min-height: 350px;
+    border-radius: 9px;
+  }
+
+  .card img {
+    height: 220px;
+  }
+
+  .card h3 {
+    font-size: 15px;
+    margin: 13px 12px 4px;
+  }
+
+  .card p:nth-of-type(1) {
+    font-size: 16px;
+    margin: 0 12px 5px;
+  }
+
+  .card p:nth-of-type(2) {
+    font-size: 12px;
+    margin: 0 12px 12px;
+  }
+
+  .card a {
+    font-size: 12px;
+    margin: 0 12px 12px;
+    padding: 10px;
+  }
+
+
+  /* Product detail */
+
+  body > a {
+    margin: 20px;
+  }
+
+  #product-detail {
+    width: 92%;
+    padding: 25px 20px;
+    margin-top: 10px;
+  }
+
+  #product-detail h2 {
+    font-size: 25px;
+  }
+
+  #product-detail img {
+    height: 350px;
+  }
+
+
+  /* Admin */
+
+  body:has(#addForm) {
+    padding: 20px;
+  }
+
+  body:has(#addForm) > h2 {
+    font-size: 25px;
+  }
+
+  #logoutBtn {
+    padding: 9px 13px;
+  }
+
+  body:has(#addForm) section {
+    padding: 20px;
+  }
+
+  #addForm {
+    grid-template-columns: 1fr;
+  }
+
+  #addForm textarea {
+    grid-column: span 1;
+  }
+
+  #products {
+    grid-template-columns: 1fr;
+  }
+
+  #orders {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  body:has(#loginForm) {
+    padding: 15px;
+  }
+
+  #loginForm {
+    padding: 25px 20px;
+  }
+
+  body:has(#loginForm) h2 {
+    padding: 20px;
+    font-size: 21px;
+  }
+}

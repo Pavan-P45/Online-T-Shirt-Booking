@@ -1,21 +1,102 @@
-Description
+# T-Shirt Shopping Web App
 
-The T-Shirt Shopping Web App is a full-stack e-commerce application where users can browse T-shirts, add items to a cart, and place orders online.
-The system also includes an admin panel to manage products and store data in a database.
+A full-stack e-commerce web application for browsing T-shirts, managing products, and placing orders online. The application also includes an admin panel for product management and email notifications when a new order is placed.
 
-Features
+## 🚀 Features
 
-Browse available T-shirts
-Add products to cart
-Place orders with customer details
-Admin login to add and manage products
-Persistent product storage in database
-Email notification to admin when an order is placed
+### 👕 Customer Module
 
-Install dependencies
+- Browse available T-shirts
+- View product details
+- Add products to cart
+- Place orders with customer details
+- Enter delivery address and contact information
+- Order confirmation
 
-npm install
+### 🔐 Admin Module
 
-Run the server
+- Admin login
+- Add new T-shirts
+- Manage available products
+- View products stored in the database
+- Receive email notifications when a new order is placed
 
-node server.js
+### 📦 Order Management
+
+- Capture customer name, contact, and delivery address
+- Store order details
+- Calculate order total
+- Generate unique order ID
+- Send order notification to admin through email
+
+## 📸 Screenshots
+
+### 🏠 T-Shirt Store
+
+![T-Shirt Store](screenshots/home.png)
+
+### 🛡️ Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### 📝 Place Order
+
+![Place Order](screenshots/place-order.png)
+
+### 📧 Order Notification
+
+![Order Notification](screenshots/order-email.jpeg)
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+### Backend
+
+- Node.js
+- Express.js
+- REST APIs
+
+### Database
+
+- MongoDB
+- Mongoose
+
+### Other Services & Tools
+
+- Nodemailer
+- Git
+- GitHub
+- VS Code
+- dotenv
+
+## 📂 Project Structure
+
+```text
+t-shirt/
+│
+├── models/
+│   └── Product and Order models
+│
+├── public/
+│   ├── css/
+│   │   └── styles.css
+│   │
+│   ├── js/
+│   │   └── Client-side JavaScript
+│   │
+│   ├── admin-dashboard.html
+│   ├── admin-login.html
+│   ├── index.html
+│   └── product.html
+│
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── server.js
+└── README.md
